@@ -1,11 +1,5 @@
-stages:
-  - staging
-
-staging:
-  stage: staging
-  image: ruby:latest
-  script:
-    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$PROJECT.git
-    - git push -f heroku master
-  only:
-    - develop
+build:
+  docker:
+      worker: /lib/Dockerfile
+run:
+   worker: npm start
