@@ -10,7 +10,7 @@ RUN apk update && \
   libwebp-tools && \
   rm -rf /var/cache/apk/*
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
